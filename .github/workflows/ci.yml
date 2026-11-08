@@ -1,0 +1,53 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -e ".[dev]"
+      - name: Lint
+        run: |
+          ruff check .
+          ruff format --check .
+      - name: Test
+        run: pytest --cov=smardfc
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - name: Build the data and the model the image needs
+        run: |
+          pip install -e .
+          python -m smardfc data --end 2026-11-01
+          python -m smardfc train
+      - name: Build the image
+        run: docker build -t smardfc .
+      - name: Start it and call the API
+        run: |
+          docker run -d --name api -p 8000:8000 smardfc
+          for i in $(seq 1 30); do curl -sf localhost:8000/health && break; sleep 2; done
+          curl -sf localhost:8000/health
+          curl -sf -X POST localhost:8000/predict -H 'content-type: application/json' \
+               -d '{"date": "2026-10-20"}' | python -c "import json,sys; r=json.load(sys.stdin); assert len(r['forecasts']) == 24; print('ok', len(r['forecasts']))"
+          docker logs api | tail -5
