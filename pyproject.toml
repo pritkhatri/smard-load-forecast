@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smardfc"
+version = "0.1.0"
+description = "Day-ahead hourly electricity load forecasting from SMARD open data (Amprion control zone)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "numpy",
+    "pandas>=2.0",
+    "pyarrow",
+    "httpx",
+    "holidays",
+    "scikit-learn",
+    "lightgbm",
+    "joblib",
+    "matplotlib",
+    "mlflow",
+    "fastapi",
+    "uvicorn",
+    "pydantic>=2",
+]
+
+[project.optional-dependencies]
+nn = ["torch"]
+dev = ["pytest", "pytest-cov", "ruff"]
+
+[project.scripts]
+smardfc = "smardfc.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*" = ["E501", "E701", "E702", "E731", "B905"]
