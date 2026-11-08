@@ -1,0 +1,55 @@
+scope,kind,model,MAE,n_hours,n_days
+cv,bridge day,naive_day,1573.8489583333333,96,4
+cv,bridge day,naive_week,2427.203125,96,4
+cv,bridge day,naive_mean4w,2139.3860677083335,96,4
+cv,bridge day,lgbm,471.0357787066805,96,4
+cv,bridge day,lgbm_resid,438.7002099973444,96,4
+cv,bridge day,mlp,1017.4960012435913,96,4
+cv,day next to holiday,naive_day,1467.2739583333334,240,10
+cv,day next to holiday,naive_week,1354.0416666666667,240,10
+cv,day next to holiday,naive_mean4w,1417.06640625,240,10
+cv,day next to holiday,lgbm,633.2217303756727,240,10
+cv,day next to holiday,lgbm_resid,681.6996263655766,240,10
+cv,day next to holiday,mlp,680.7660927136739,240,10
+cv,holiday,naive_day,2038.3489583333333,240,10
+cv,holiday,naive_week,3242.8104166666667,240,10
+cv,holiday,naive_mean4w,3564.854427083333,240,10
+cv,holiday,lgbm,764.6216010173739,240,10
+cv,holiday,lgbm_resid,753.1666528358594,240,10
+cv,holiday,mlp,769.0935334046682,240,10
+cv,normal weekday,naive_day,1565.9898560209424,4584,191
+cv,normal weekday,naive_week,1068.7858856893542,4584,191
+cv,normal weekday,naive_mean4w,1125.6787456369982,4584,191
+cv,normal weekday,lgbm,647.471411468826,4584,191
+cv,normal weekday,lgbm_resid,653.6846382707913,4584,191
+cv,normal weekday,mlp,646.0527077863354,4584,191
+cv,weekend,naive_day,2360.145710784314,2040,85
+cv,weekend,naive_week,748.0235294117647,2040,85
+cv,weekend,naive_mean4w,804.9366482843137,2040,85
+cv,weekend,lgbm,560.8681178677225,2040,85
+cv,weekend,lgbm_resid,593.7261566246691,2040,85
+cv,weekend,mlp,601.1481188825533,2040,85
+test,day next to holiday,naive_day,665.4479166666666,48,2
+test,day next to holiday,naive_week,888.296875,48,2
+test,day next to holiday,naive_mean4w,889.0416666666666,48,2
+test,day next to holiday,lgbm,629.6725032348326,48,2
+test,day next to holiday,lgbm_resid,656.6241477141375,48,2
+test,day next to holiday,mlp,971.8171528975168,48,2
+test,holiday,naive_day,2634.4270833333335,24,1
+test,holiday,naive_week,2696.53125,24,1
+test,holiday,naive_mean4w,1989.9140625,24,1
+test,holiday,lgbm,807.4235502234045,24,1
+test,holiday,lgbm_resid,825.4950321566166,24,1
+test,holiday,mlp,557.1285305023193,24,1
+test,normal weekday,naive_day,1530.9847647849463,1488,62
+test,normal weekday,naive_week,690.3860483870967,1488,62
+test,normal weekday,naive_mean4w,754.7239952956988,1488,62
+test,normal weekday,lgbm,534.611313421826,1488,62
+test,normal weekday,lgbm_resid,548.0507742438162,1488,62
+test,normal weekday,mlp,512.011608882258,1488,62
+test,weekend,naive_day,2593.3997504159734,601,25
+test,weekend,naive_week,639.9168053244592,601,25
+test,weekend,naive_mean4w,637.8871672212979,601,25
+test,weekend,lgbm,553.7411751021461,601,25
+test,weekend,lgbm_resid,594.7598521198001,601,25
+test,weekend,mlp,484.72279624335977,601,25

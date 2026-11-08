@@ -1,0 +1,16 @@
+{
+  "n_raw": 42360,
+  "first": "2021-12-31 23:00:00+00:00",
+  "last": "2026-10-31 22:00:00+00:00",
+  "n_duplicates": 0,
+  "n_nonpositive": 0,
+  "n_missing_hours": 0,
+  "n_gaps": 0,
+  "longest_gap_hours": 0,
+  "n_interpolated": 0,
+  "n_left_missing": 0,
+  "n_flagged_outliers": 38,
+  "n_short_days_23h": 5,
+  "n_long_days_25h": 5,
+  "gaps": []
+}

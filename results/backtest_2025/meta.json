@@ -1,0 +1,52 @@
+{
+  "version": "0.1.0",
+  "data_first": "2021-12-31 23:00:00+00:00",
+  "data_last": "2025-10-31 22:00:00+00:00",
+  "n_feature_days": 1371,
+  "test_start": "2025-08-03",
+  "test_end": "2025-10-31",
+  "cv_folds": [
+    {
+      "fold": 1,
+      "train_days": 981,
+      "val_start": "2024-10-07",
+      "val_end": "2024-12-05"
+    },
+    {
+      "fold": 2,
+      "train_days": 1041,
+      "val_start": "2024-12-06",
+      "val_end": "2025-02-03"
+    },
+    {
+      "fold": 3,
+      "train_days": 1101,
+      "val_start": "2025-02-04",
+      "val_end": "2025-04-04"
+    },
+    {
+      "fold": 4,
+      "train_days": 1161,
+      "val_start": "2025-04-05",
+      "val_end": "2025-06-03"
+    },
+    {
+      "fold": 5,
+      "train_days": 1221,
+      "val_start": "2025-06-04",
+      "val_end": "2025-08-02"
+    }
+  ],
+  "worst_week": "2025-09-29",
+  "best_week": "2025-10-13",
+  "models": [
+    "naive_day",
+    "naive_week",
+    "naive_mean4w",
+    "lgbm",
+    "lgbm_resid",
+    "mlp"
+  ],
+  "until": "2025-11-01",
+  "purge_days": 0
+}
